@@ -202,34 +202,6 @@
             justify-content: center;
         }
 
-        :root {
-            --primary: #4CAF50;
-            --primary-dark: #388E3C;
-            --secondary: #2196F3;
-            --text: #333;
-            --light-bg: #f5f5f5;
-            --border: #ddd;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: var(--light-bg);
-            line-height: 1.6;
-        }
-
-        .header {
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: var(--primary-dark);
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
         .breadcrumbs {
             text-align: center;
             margin-bottom: 20px;
@@ -435,41 +407,126 @@
             justify-content: center;
         }
 
-        .pagination nav {
+        .pagination {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 8px;
     margin: 30px 0;
-    flex-wrap: wrap;
 }
 
-.pagination nav .relative {
-    padding: 8px 12px;
+.pagination .flex.items-center.justify-between {
+    width: 100%;
+}
+
+/* Мобильная версия */
+.pagination .sm\\:hidden {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination .relative.inline-flex.items-center {
+    padding: 10px 16px;
     border: 1px solid var(--border);
     background: white;
     border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.3s;
+}
+
+.pagination .relative.inline-flex.items-center:hover:not(.cursor-default) {
+    background: var(--light-bg);
+    border-color: var(--primary);
+}
+
+.pagination .cursor-default {
+    opacity: 0.5;
+    background: var(--light-bg);
+}
+
+.pagination .ml-3 {
+    margin-left: 12px;
+}
+
+/* Десктопная версия */
+.pagination .hidden.sm\\:flex {
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination .relative.z-0.inline-flex {
+    gap: 8px;
+}
+
+.pagination .relative.inline-flex.items-center.px-4.py-2 {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    background: white;
     color: var(--text);
     text-decoration: none;
     transition: all 0.3s;
     min-width: 40px;
     text-align: center;
+    border-radius: 5px;
 }
 
-.pagination nav .relative:hover:not(.disabled) {
+.pagination .relative.inline-flex.items-center.px-4.py-2:hover:not(.cursor-default) {
     background: var(--light-bg);
+    border-color: var(--primary);
 }
 
-.pagination nav .bg-blue-100 {
+.pagination .relative.inline-flex.items-center.px-4.py-2.-ml-px {
+    margin-left: -1px;
+}
+
+.pagination .cursor-default.text-gray-500 {
     background: var(--primary);
     color: white;
     border-color: var(--primary);
 }
 
-.pagination .page-info {
-    margin: 0 15px;
-    color: #666;
-    font-size: 14px;
+.pagination .text-gray-700:hover {
+    color: var(--primary-dark);
+}
+
+/* Адаптивность */
+@media (min-width: 640px) {
+    .pagination .sm\\:hidden {
+        display: none;
+    }
+    
+    .pagination .hidden.sm\\:flex {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagination .relative.inline-flex.items-center {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .pagination .relative.inline-flex.items-center.px-4.py-2 {
+        padding: 6px 10px;
+        min-width: 35px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination .relative.inline-flex.items-center {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .pagination .relative.inline-flex.items-center.px-4.py-2 {
+        padding: 5px 8px;
+        min-width: 30px;
+        font-size: 12px;
+    }
 }
 
 /* Мобильная версия */
@@ -484,48 +541,6 @@
         min-width: 35px;
     }
 }
-
-:root {
-            --primary: #4CAF50;
-            --primary-dark: #388E3C;
-            --secondary: #2196F3;
-            --text: #333;
-            --light-bg: #f5f5f5;
-            --border: #ddd;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: var(--light-bg);
-            line-height: 1.6;
-        }
-
-        .header {
-            margin-bottom: 30px;
-        }
-
-        .breadcrumbs {
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .breadcrumbs a {
-            color: var(--secondary);
-            text-decoration: none;
-        }
-
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            color: var(--primary-dark);
-            text-align: center;
-            margin-bottom: 30px;
-        }
 
         .word-card {
             background: white;
@@ -715,47 +730,6 @@
             }
         }
 
-        :root {
-            --primary: #4CAF50;
-            --primary-dark: #388E3C;
-            --secondary: #2196F3;
-            --text: #333;
-            --light-bg: #f5f5f5;
-            --border: #ddd;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: var(--light-bg);
-            line-height: 1.6;
-        }
-
-        .header {
-            margin-bottom: 30px;
-        }
-
-        .breadcrumbs {
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .breadcrumbs a {
-            color: var(--secondary);
-            text-decoration: none;
-        }
-
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-
         .search-info {
             background: white;
             padding: 20px;
@@ -905,46 +879,6 @@
             color: var(--primary-dark);
         }
 
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .page-btn {
-            padding: 8px 12px;
-            border: 1px solid var(--border);
-            background: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            color: var(--text);
-        }
-
-        .page-btn:hover:not(.disabled) {
-            background: var(--light-bg);
-        }
-
-        .page-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .page-btn.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .page-info {
-            margin: 0 15px;
-            color: #666;
-        }
-
         .footer {
             text-align: center;
             margin-top: 50px;
@@ -1006,6 +940,149 @@
                 font-size: 14px;
             }
         }
+
+.pagination .flex.items-center.justify-between {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Мобильная версия */
+.pagination .sm\\:hidden {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.pagination .relative.inline-flex.items-center {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.3s;
+    flex: 1;
+    justify-content: center;
+}
+
+.pagination .relative.inline-flex.items-center:hover:not(.cursor-default) {
+    background: var(--light-bg);
+    border-color: var(--primary);
+}
+
+.pagination .cursor-default {
+    opacity: 0.5;
+    background: var(--light-bg);
+    cursor: not-allowed;
+}
+
+.pagination .ml-3 {
+    margin-left: 0;
+}
+
+/* Десктопная версия */
+.pagination .hidden.sm\\:flex {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pagination .relative.z-0.inline-flex {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination .relative.inline-flex.items-center.px-4.py-2 {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s;
+    min-width: 40px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.pagination .relative.inline-flex.items-center.px-4.py-2:hover:not(.cursor-default) {
+    background: var(--light-bg);
+    border-color: var(--primary);
+}
+
+.pagination .relative.inline-flex.items-center.px-4.py-2.-ml-px {
+    margin-left: 0;
+}
+
+.pagination .cursor-default.text-gray-500 {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.pagination .text-gray-700:hover {
+    color: var(--primary-dark);
+}
+
+/* Отступы между элементами пагинации */
+.pagination .relative.z-0.inline-flex .relative.inline-flex.items-center {
+    margin: 0 2px;
+}
+
+/* Адаптивность */
+@media (min-width: 640px) {
+    .pagination .sm\\:hidden {
+        display: none;
+    }
+    
+    .pagination .hidden.sm\\:flex {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagination .relative.inline-flex.items-center {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .pagination .relative.inline-flex.items-center.px-4.py-2 {
+        padding: 6px 10px;
+        min-width: 35px;
+        font-size: 13px;
+    }
+    
+    .pagination .sm\\:hidden {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination .relative.inline-flex.items-center {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .pagination .relative.inline-flex.items-center.px-4.py-2 {
+        padding: 5px 8px;
+        min-width: 30px;
+        font-size: 12px;
+    }
+    
+    .pagination .sm\\:hidden {
+        gap: 5px;
+    }
+    
+    .pagination .relative.z-0.inline-flex {
+        gap: 4px;
+    }
+}
     </style>
 </head>
 <body>

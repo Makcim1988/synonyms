@@ -32,11 +32,7 @@
             @endforeach
         </div>
 
-    <div class="pagination">
-        <div class="page-numbers" id="pageNumbers">
             <div class="pagination">
                 {{ $words->appends(['letter' => $letter])->links() }}
             </div>
-        </div>
-    </div>
 </x-layout>
