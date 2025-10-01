@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ $description }}">
-
+	<meta name="google-site-verification" content="TOlsj-ugbqY_nuvcl-ssiYdHoPEvphmPLo2GnzjK2_E" />
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <title>{{ $title }} @php if(isset($_GET['page'])) echo 'Cтраница ' . $_GET['page']; @endphp</title>
     <style>
         :root {
@@ -345,29 +345,29 @@
             body {
                 padding: 10px;
             }
-            
+
             .letter-title {
                 font-size: 2.5em;
             }
-            
+
             .search-box {
                 flex-direction: column;
             }
-            
+
             .words-list {
                 gap: 8px;
             }
-            
+
             .word-link {
                 padding: 6px 12px;
                 font-size: 14px;
             }
-            
+
             .alphabet-nav {
                 gap: 5px;
                 padding: 15px;
             }
-            
+
             .letter-btn {
                 padding: 6px 10px;
                 min-width: 35px;
@@ -379,20 +379,20 @@
             .letter-title {
                 font-size: 2em;
             }
-            
+
             .words-list {
                 gap: 6px;
             }
-            
+
             .word-link {
                 padding: 5px 10px;
                 font-size: 12px;
             }
-            
+
             .alphabet-nav {
                 gap: 3px;
             }
-            
+
             .letter-btn {
                 padding: 5px 8px;
                 min-width: 30px;
@@ -497,7 +497,7 @@
     .pagination .sm\\:hidden {
         display: none;
     }
-    
+
     .pagination .hidden.sm\\:flex {
         display: flex;
     }
@@ -508,7 +508,7 @@
         padding: 8px 12px;
         font-size: 13px;
     }
-    
+
     .pagination .relative.inline-flex.items-center.px-4.py-2 {
         padding: 6px 10px;
         min-width: 35px;
@@ -521,7 +521,7 @@
         padding: 6px 10px;
         font-size: 12px;
     }
-    
+
     .pagination .relative.inline-flex.items-center.px-4.py-2 {
         padding: 5px 8px;
         min-width: 30px;
@@ -534,7 +534,7 @@
     .pagination nav {
         gap: 5px;
     }
-    
+
     .pagination nav .relative {
         padding: 6px 10px;
         font-size: 14px;
@@ -685,32 +685,32 @@
             body {
                 padding: 10px;
             }
-            
+
             .word-card {
                 padding: 20px;
             }
-            
+
             .word-title {
                 font-size: 2em;
             }
-            
+
             .word-meta {
                 gap: 10px;
             }
-            
+
             .synonyms-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .synonyms-section, .examples-section {
                 padding: 20px;
             }
-            
+
             .navigation {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .nav-btn {
                 text-align: center;
             }
@@ -720,11 +720,11 @@
             .word-title {
                 font-size: 1.7em;
             }
-            
+
             .synonym-card {
                 padding: 15px;
             }
-            
+
             .synonym-word {
                 font-size: 1.1em;
             }
@@ -893,27 +893,27 @@
             body {
                 padding: 10px;
             }
-            
+
             .search-box {
                 flex-direction: column;
             }
-            
+
             .result-item {
                 padding: 15px;
             }
-            
+
             .result-meta {
                 gap: 10px;
             }
-            
+
             .result-word {
                 font-size: 1.1em;
             }
-            
+
             .pagination {
                 gap: 5px;
             }
-            
+
             .page-btn {
                 padding: 6px 10px;
                 font-size: 14px;
@@ -925,16 +925,16 @@
                 flex-direction: column;
                 gap: 5px;
             }
-            
+
             .synonyms-preview {
                 gap: 5px;
             }
-            
+
             .synonym-tag {
                 font-size: 0.8em;
                 padding: 3px 8px;
             }
-            
+
             .page-info {
                 margin: 0 10px;
                 font-size: 14px;
@@ -1040,7 +1040,7 @@
     .pagination .sm\\:hidden {
         display: none;
     }
-    
+
     .pagination .hidden.sm\\:flex {
         display: flex;
     }
@@ -1051,13 +1051,13 @@
         padding: 8px 12px;
         font-size: 13px;
     }
-    
+
     .pagination .relative.inline-flex.items-center.px-4.py-2 {
         padding: 6px 10px;
         min-width: 35px;
         font-size: 13px;
     }
-    
+
     .pagination .sm\\:hidden {
         gap: 8px;
     }
@@ -1068,17 +1068,17 @@
         padding: 6px 10px;
         font-size: 12px;
     }
-    
+
     .pagination .relative.inline-flex.items-center.px-4.py-2 {
         padding: 5px 8px;
         min-width: 30px;
         font-size: 12px;
     }
-    
+
     .pagination .sm\\:hidden {
         gap: 5px;
     }
-    
+
     .pagination .relative.z-0.inline-flex {
         gap: 4px;
     }

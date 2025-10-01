@@ -3,31 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\BaseWord;
+use App\Models\BaseWordAntonym;
 
-class SynonymsController extends Controller
+class AntonymsController extends Controller
 {
-    public function index()
+   	public function index()
     {
-        return view('main');
+        return view('main-antonyms');
     }
-
+    
     public function showWordsByLetter(Request $request)
     {
         $letter = $request->query('letter');
-        $words = BaseWord::where('word', 'like', $letter . '%')->paginate(300);
-        $wordsAll = BaseWord::where('word', 'like', $letter . '%')->get();
+        $words = BaseWordAntonym::where('word', 'like', $letter . '%')->paginate(300);
+        $wordsAll = BaseWordAntonym::where('word', 'like', $letter . '%')->get();
         $wordsCount = count($wordsAll);
 
-        return view('letter', ['words' => $words, 'count' => $wordsCount, 'letter' => $letter]);
+        return view('letter-antonym', ['words' => $words, 'count' => $wordsCount, 'letter' => $letter]);
     }
 
     public function showWord(Request $request, $slug)
     {
         $letter = $request->query('letter');
-        $word = BaseWord::where('slug', $slug)->first();
+        $word = BaseWordAntonym::where('slug', $slug)->first();
 
-        return view('synonyms', ['word' => $word, 'letter' => $letter]);
+        return view('antonyms', ['word' => $word, 'letter' => $letter]);
     }
 
     public function search(Request $request)
@@ -44,20 +44,20 @@ class SynonymsController extends Controller
             $allResult = BaseWord::where('word', 'like', "%{$search}%")->get();
         }*/
         
-        $exactMatch = BaseWord::where('word', $search)->first();
+        $exactMatch = BaseWordAntonym::where('word', $search)->first();
 
         if ($exactMatch) {
             // Возвращаем как запрос, чтобы использовать paginate()
-            $result = BaseWord::where('id', $exactMatch->id)->paginate(10);
+            $result = BaseWordAntonym::where('id', $exactMatch->id)->paginate(10);
             $count = 1;
             $allResult = collect([$exactMatch]);
         } else {
             // Иначе — обычный LIKE-поиск
-            $result = BaseWord::where('word', 'like', "%{$search}%")->paginate(10);
-            $count = BaseWord::where('word', 'like', "%{$search}%")->count();
-            $allResult = BaseWord::where('word', 'like', "%{$search}%")->get();
+            $result = BaseWordAntonym::where('word', 'like', "%{$search}%")->paginate(10);
+            $count = BaseWordAntonym::where('word', 'like', "%{$search}%")->count();
+            $allResult = BaseWordAntonym::where('word', 'like', "%{$search}%")->get();
         }
         
-        return view('search', ['result' => $result, 'search' => $search, 'count' => $count, 'allResult' => $allResult]);
+        return view('search-antonyms', ['result' => $result, 'search' => $search, 'count' => $count, 'allResult' => $allResult]);
     }
 }

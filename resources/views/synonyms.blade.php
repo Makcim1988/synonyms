@@ -9,11 +9,11 @@
 
     <div class="header">
         <div class="breadcrumbs">
-            <a href="{{ route('main') }}">Главная</a> > 
-            <a href="{{ route('show.words') }}?letter={{ $letter }}">Слова на букву {{ $letter }}</a> > 
+            <a href="{{ route('main') }}">Главная</a> >
+            <a href="{{ route('show.words') }}?letter={{ $letter }}">Синонимы на букву "{{ mb_strtoupper($letter) }}"</a> >
             <span>{{ $word->word }}</span>
         </div>
-        
+
         <h1>Словарь синонимов</h1>
     </div>
 
@@ -33,8 +33,8 @@
     </div>
 
     <div class="navigation">
-        <a href="{{ route('show.words') }}?letter={{ $letter }}" class="nav-btn">Все слова на {{ $letter }} →</a>
+        <a href="{{ route('show.words') }}?letter={{ $letter }}" class="nav-btn">Все слова на "{{ mb_strtoupper($letter) }}" →</a>
     </div>
 </x-layout>
 
-    
+
